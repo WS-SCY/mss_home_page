@@ -3,27 +3,26 @@
     <div class = 'nav'> 
       <div class = 'nav_pic'><img src = "../assets/mss.png"></div>
       <div class = 'nav_others'> 
-        <div class = "add_bottom_line"><a href=""><img src = "../assets/sy.png"></a> </div>
+        <div class = "add_bottom_line" id = 'sy'><a href=""><img src = "../assets/sy.png"></a> </div>
         <div class = "add_bottom_line"><a href=""><img src = "../assets/sqjx.png"></a> </div> 
-        <div class = "add_bottom_line_special"> 
-          <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"> 
-          <el-submenu index="2">
-              <template slot="title"  background-color:red ><img src = "../assets/ywhz.png"></template>
-              <el-menu-item index="2-1">合作1</el-menu-item>
-              <el-menu-item index="2-2">合作2</el-menu-item>
-              <el-menu-item index="2-3">合作3</el-menu-item> 
-          </el-submenu> 
-          </el-menu> 
+        <div class = "without_bottom_line"> 
+          <div class="dorp">
+            <span><img src = "../assets/ywhz.png"><img id='dbx' src = "../assets/dbx.png"></span>
+            <div class="dorp_con"> 
+              <p>业务一</p> 
+              <p>业务二</p> 
+              <p>业务三</p> 
+            </div>
+          </div>
         </div>
-        <div class = "add_bottom_line_special"> 
-          <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"> 
-          <el-submenu index="2">
-              <template slot="title"  background-color:red ><img src = "../assets/fbzgj.png"></template>
-              <el-menu-item index="2-1">工具1</el-menu-item>
-              <el-menu-item index="2-2">工具2</el-menu-item>
-              <el-menu-item index="2-3">工具3</el-menu-item> 
-          </el-submenu> 
-          </el-menu> 
+        <div class = "without_bottom_line"> 
+          <div class="dorp">
+            <span><img src = "../assets/fbzgj.png"><img id='dbx' src = "../assets/dbx.png"></span>
+            <div class="dorp_con"> 
+              <p>工具一</p> 
+              <p>工具二</p> 
+            </div>
+          </div>
         </div>
         <div class = "add_bottom_line"><a href=""><img src = "../assets/xwzx.png"></a> </div>
         <div class = "add_bottom_line"><a href=""><img src = "../assets/gywm.png"></a> </div>
@@ -62,49 +61,18 @@
 </script>
 
 <style> 
- .wrapper{
-    background-color: violet;
-    height: 200px;
-    float:left;
-}
-.el-menu-demo{
-    height: 40px; 
-    background:transparent;
-    /* border-bottom-color:none!important; */
-    background-color:rgba(0,0,0,0);
-    float:right; 
-
-}
-/* 点击出来的下划线进行隐藏 */
-.el-menu-item.is-active {
-    border-bottom: none!important;
-    color: rgba(0,0,0,0);
-}
-/* 整体的下划线进行隐藏 */
-.el-menu.el-menu--horizontal{
-  border-bottom: none;
-}
-/* 导航栏的间距等样式 */
-.el-menu-item {
-  padding: 0 62px;
-  font-size: 16px;
-}
-
-/* 点击出来的下划线动效残留进行隐藏 */
-.el-menu--horizontal>.el-menu-item{
-    border-bottom: none;
-}
-/* 点击以后的背景色进行隐藏 */
-.el-menu--horizontal>.el-menu-item:not(.is-disabled):focus, .el-menu--horizontal>.el-menu-item:not(.is-disabled):hover, .el-menu--horizontal>.el-submenu .el-submenu__title:hover {
-    background-color: rgba(0,0,0,0); 
-}
-
 
 #homepage_containter{
   background-image: url("../assets/background_pic.png");
   background-size: 100% 100%;
   height:100%;
 } 
+#dbx{
+  margin-bottom: 8px;
+}
+#sy{
+  border-bottom: 2px solid rgb(255, 255, 255); 
+}
 .nav{ 
   /* background-color:rgba(69, 84, 131,0.2); */
   height:80px;
@@ -114,27 +82,48 @@
 .add_bottom_line{
   text-align: center;
   float: left;  
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 25px; 
   height:30px;
 }
-.add_bottom_line_special{
+.add_bottom_line:hover{
+  border-bottom: 2px solid rgb(255, 255, 255); 
+}
+.without_bottom_line{
+  text-align: center;
   float: left;  
-  margin-top: -19px;
-  margin-right: -12px;
+  margin-left: 25px; 
+  height:30px;
 }
 .nav_pic{
   float: left; 
   margin-top: 20px;
+  margin-left: 40px;
 }
 .nav_others{ 
   float: right;
   padding-top: 20px;
+  margin-right: 40px;
 }
 
-.add_bottom_line:hover{
-  border-bottom: 2px solid rgb(255, 255, 255); 
+
+.dorp{  
+  position: relative; 
+  display: inline-block;  
 }
+
+.dorp_con{ 
+  display: none; 
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  margin-top:10px;
+  padding: 12px 16px;
+  border-radius: 10px;
+}
+
+.dorp:hover .dorp_con{display:block;}
+
 .content{    
   height:80%; 
 }

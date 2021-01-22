@@ -1,15 +1,21 @@
 <template>
     <div class = "wrapper">
-        <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect"> 
-        <el-submenu index="2">
-            <template slot="title"  background-color:red ><img src = "../assets/fbzgj.png"></template>
-            <el-menu-item index="2-1"><a href ="">选项1</a></el-menu-item>
-            <el-menu-item index="2-2">选项2</el-menu-item>
-            <el-menu-item index="2-3">选项3</el-menu-item> 
-        </el-submenu> 
-        </el-menu> 
+
+
+<div class="dorp">
+
+  <span>下拉菜单测试</span>
+
+  <div class="dorp_con"> 
+     <p>子菜单一</p> 
+     <p>子菜单二</p> 
+  </div>
+
+</div>
+
     </div>
 
+  
 </template>
 
 <script> 
@@ -28,41 +34,22 @@
   }
 </script>
 
-<style>
-.wrapper{
-    background-color: violet;
-    height: 200px;
-    float:left;
-}
-.el-menu-demo{
-    height: 40px;
-    background:transparent;
-    /* border-bottom-color:none!important; */
-    background-color:rgba(0,0,0,0);
-    float:right; 
-
-}
-/* 点击出来的下划线进行隐藏 */
-.el-menu-item.is-active {
-    border-bottom: none!important;
-    color: rgba(0,0,0,0);
-}
-/* 整体的下划线进行隐藏 */
-.el-menu.el-menu--horizontal{
-  border-bottom: none;
-}
-/* 导航栏的间距等样式 */
-.el-menu-item {
-  padding: 0 62px;
-  font-size: 16px;
+<style scope>
+.dorp{  
+  position: relative; 
+  display: inline-block; 
 }
 
-/* 点击出来的下划线动效残留进行隐藏 */
-.el-menu--horizontal>.el-menu-item{
-    border-bottom: none;
+.dorp_con{ 
+  display: none; 
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  border-radius: 10px;
 }
-/* 点击以后的背景色进行隐藏 */
-.el-menu--horizontal>.el-menu-item:not(.is-disabled):focus, .el-menu--horizontal>.el-menu-item:not(.is-disabled):hover, .el-menu--horizontal>.el-submenu .el-submenu__title:hover {
-    background-color: rgba(0,0,0,0); 
-}
+
+.dorp:hover .dorp_con{display:block;}
+
 </style>

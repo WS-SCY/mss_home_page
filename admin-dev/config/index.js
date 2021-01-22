@@ -10,7 +10,24 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        target: 'http://mss-admin-dev.msshow.xyz',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/api': '/api'
+        }
+      },
+      '/upload': {
+        target: 'http://mss-admin-dev.msshow.xyz',
+        changeOrigin: true,
+        secure: false,
+        pathRewrite: {
+          '^/upload': '/upload'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
