@@ -41,6 +41,10 @@
           </div>   
       </div>
     </div>
+    <div class = 'info'>
+      <p>苏ICP备 2020057089号-1 Copyright 2020-2021 美上书（无锡）科技有限公司 | 地址：江苏省无锡市滨湖区绣溪路58号20号楼</p>
+    </div>
+
   </div>
 </template>
 
@@ -68,17 +72,13 @@
   height:100%;
 } 
 #dbx{
-  margin-bottom: 8px;
+  margin-bottom: 7px;
+  height:4px;
 }
 #sy{
   border-bottom: 2px solid rgb(255, 255, 255); 
 }
-.nav{ 
-  /* background-color:rgba(69, 84, 131,0.2); */
-  height:80px;
-  width:100%;
-  float: left;
-}
+
 .add_bottom_line{
   text-align: center;
   float: left;  
@@ -94,17 +94,27 @@
   margin-left: 25px; 
   height:30px;
 }
-.nav_pic{
-  float: left; 
+.nav{ 
+  /* background-color:rgba(69, 84, 131,0.2); */
+  height:80px;
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.nav_pic{ 
   margin-top: 20px;
-  margin-left: 40px;
+  margin-left: 50px;
 }
-.nav_others{ 
-  float: right;
+.nav_pic img{
+  height:60px;
+}
+.nav_others{  
   padding-top: 20px;
-  margin-right: 40px;
+  margin-right: 50px;
+} 
+.nav_others img{
+  height:18px;
 }
-
 
 .dorp{  
   position: relative; 
@@ -188,5 +198,10 @@
 .content_right_bottom img{ 
   height:40px; 
 }
-  
+.info{     
+  width:100%;
+  float: left;
+  text-align: center; 
+  font-size: 10px;
+}
 </style>
